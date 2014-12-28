@@ -1,6 +1,8 @@
 # Unity files to ignore
 Library/
 Temp/
+*.csproj
+*.sln
 
 # Windows image file caches
 Thumbs.db

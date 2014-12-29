@@ -5,6 +5,7 @@ public class MyTestScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		// Added this from the mac
 	
 	}
 	

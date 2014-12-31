@@ -1,21 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MyZombie : MonoBehaviour {
+class MyZombie {
 	public string Name;
 	public int brainsEaten;
 	public int hitPoints;
-	public MyZombie()
+	GameObject ZombieMesh;
+	public MyZombie(string n, int hp)
 	{
-		Name = "MyZombie";
+		Name = n;
 		brainsEaten = 0;
-		hitPoints = 10;
+		hitPoints = hp;
+		ZombieMesh = GameObject.CreatePrimitive(PrimitiveType.Capsule);
+		Vector3 pos = new Vector3();
+		pos.x = Random.Range(-10, 10);
+		pos.y = 0f; // optional
+		pos.z = Random.Range (-10, 10);
+		ZombieMesh.transform.position = pos;
 	}
 
-	MyZombie rob = new MyZombie();
 
 
-
+/*
 	// Use this for initialization
 	void Start () {
 	
@@ -25,4 +31,5 @@ public class MyZombie : MonoBehaviour {
 	void Update () {
 	
 	}
+*/
 }

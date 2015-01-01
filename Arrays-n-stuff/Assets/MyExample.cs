@@ -11,6 +11,10 @@ public class MyExample : MonoBehaviour {
 		boxes = new GameObject[numBoxes];
 		for (int i = 0; i < numBoxes; i++) {
 			GameObject box = GameObject.CreatePrimitive(PrimitiveType.Cube);
+			box.AddComponent("Monster");  // Add component here!
+			Monster m = box.GetComponent("Monster") as Monster;
+			m.ID = i;
+			m.spacing = spacing;
 			boxes [i] = box;
 		}
 	}
@@ -19,10 +23,10 @@ public class MyExample : MonoBehaviour {
 	void Update () {
 		int i = 0;
 		foreach (GameObject  go in boxes) {
-			float wave = Mathf.Tan(Time.fixedTime + i);
-			go.transform.position = new Vector3(i * spacing, wave, 0);
+//			float wave = Mathf.Sin(Time.fixedTime + i);
+//			go.transform.position = new Vector3(i * spacing, wave, 0);
 			i++;
-			print (Time.fixedTime);
+			//print (Time.fixedTime);
 		}
 	}
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MyExample : MonoBehaviour {
+public class MonsterSpawner : MonoBehaviour {
 	public int numBoxes = 10;
 	public GameObject[] boxes;
 	public float spacing;
@@ -21,12 +21,13 @@ public class MyExample : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		int i = 0;
+/*		int i = 0;
 		foreach (GameObject  go in boxes) {
 //			float wave = Mathf.Sin(Time.fixedTime + i);
 //			go.transform.position = new Vector3(i * spacing, wave, 0);
 			i++;
 			//print (Time.fixedTime);
 		}
+		*/
 	}
 }

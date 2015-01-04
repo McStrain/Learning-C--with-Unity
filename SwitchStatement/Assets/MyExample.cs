@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class MyExample : MonoBehaviour {
-	public int i = 1;
+	public int i = 10;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +18,9 @@ public class MyExample : MonoBehaviour {
 			
 		case 2:
 			Debug.Log("i is two");
+			break;
+		default:
+			Debug.Log("Every other number");
 			break;
 		}
 }

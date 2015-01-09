@@ -5,7 +5,9 @@ public class First : MonoBehaviour
 {
 	void Awake()
 	{
-		Debug.Log("First Awake");
+		Debug.Log("Awake Start");
+//		this.gameObject.AddComponent(typeof(Second));
+		Debug.Log ("Awake Done");
 	}
 	
 	void OnEnable()
@@ -43,3 +45,4 @@ public class First : MonoBehaviour
 		Debug.Log("First OnDestroy");		
 	}
 }
+

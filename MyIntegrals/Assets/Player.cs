@@ -5,6 +5,10 @@ public class Player : MonoBehaviour
 {
 	public float Speed = 0.1f;
 
+	void Start()
+	{
+	}
+
 	// Update is called once per frame
 	void Update()
 	{

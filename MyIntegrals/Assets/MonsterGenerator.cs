@@ -9,10 +9,10 @@ public class MonsterGenerator : MonoBehaviour {
 		{
 			GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
 			sphere.AddComponent("Monster");
-			Vector3 pos = new Vector3();
-			pos.x = Random.Range(-10, 10);
-			pos.z = Random.Range (-10, 10);
-			sphere.transform.position = pos;
+	//		Vector3 pos = new Vector3();
+	//		pos.x = Random.Range(-10, 10);
+	//		pos.z = Random.Range (-10, 10);
+	//		sphere.transform.position = pos;
 		}
 	
 	}

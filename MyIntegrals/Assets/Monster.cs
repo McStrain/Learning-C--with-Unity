@@ -14,6 +14,8 @@ public class Monster : MonoBehaviour
 	public MonsterState mState;
 
 	Vector3 Direction;  // class scoped variable
+	public float AttackRange = 3.0f;
+	public float SpeedMultiplyer = 0.01f;
 
 
 	// Use this for initialization
@@ -39,7 +41,11 @@ public class Monster : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		Direction = Vector3.Normalize(PlayerObject.transform.position - transform.position);
+		if ((PlayerObject.transform.position - transform.position).magnitude > AttackRange)
+		{
+			Direction = Vector3.Normalize (PlayerObject.transform.position - transform.position);
+			transform.position += Direction * SpeedMultiplyer;
+		}
 
 		switch (mState) 
 		{

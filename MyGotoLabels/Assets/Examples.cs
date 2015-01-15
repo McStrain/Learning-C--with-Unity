@@ -13,17 +13,7 @@ public class Examples : MonoBehaviour {
 		print ("number was less than 0");  // gets skipped if num isn't > 0
 	MyLabel:  // goes here when num is greater than 0
 		print ("I jumped to MyLabel");
-/*
-		if (true) 
-		{
-			print ("This is true so it prints.");
-		}
 
-		if (false) 
-		{
-			print ("This is false so it shouldn't print.");
-		}
-*/
 	}
 	
 	// Update is called once per frame

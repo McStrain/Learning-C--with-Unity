@@ -11,8 +11,11 @@ public class Examples : MonoBehaviour {
 		int[] powersOfTwo = {1,2,4,8,16,32,64,128,256,512,1024};
 
 		ArrayList Numbers = new ArrayList{primes, fibonacci, powersOfTwo};
+		object[] thing = Numbers.ToArray() as object[];
+		print (thing.Length);
 
-		int numArrays = Numbers.Count;
+
+/*		int numArrays = Numbers.Count;
 
 		foreach (int[] Nums in Numbers)
 		{
@@ -21,7 +24,7 @@ public class Examples : MonoBehaviour {
 				print (n);
 			}
 		}
-
+*/
 	//	int items = primes.Length;
 
 	//	for (int i = 0; i < items; i++) 
@@ -36,14 +39,7 @@ public class Examples : MonoBehaviour {
 	//		j++;
 	//	}
 	
-		foreach (int item in primes) 
-		{
-			print (item);
-		}
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }

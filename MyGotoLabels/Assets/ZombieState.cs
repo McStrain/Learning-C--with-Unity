@@ -21,6 +21,7 @@ public class ZombieState : MonoBehaviour {
 		stateTimer = 0.1f;
 		MyState = ZState.idleing;
 		closestDistance = Mathf.Infinity;
+		print ("stateTimer 1 = " + stateTimer);
 	}
 	
 	// Update is called once per frame
@@ -35,6 +36,7 @@ public class ZombieState : MonoBehaviour {
 			break;
 		}
 	Ideling:
+			print ("IDELING");
 			stateTimer -= Time.deltaTime;
 			if(stateTimer < 0.0f)
 		{	
@@ -50,6 +52,7 @@ public class ZombieState : MonoBehaviour {
 			MoveAround ();
 		if(stateTimer < 0.0f)
 		{
+			print ("WANDERING");
 			MyState = ZState.idleing;
 			stateTimer = myStateTimer;
 		}

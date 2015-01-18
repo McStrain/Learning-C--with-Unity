@@ -90,9 +90,9 @@ public class ZombieState : MonoBehaviour {
 		transform.forward = directionToMove;
 //		gameObject.rigidbody.velocity = directionToMove * Random.Range (10, 30) * 0.1f;
 		gameObject.rigidbody.velocity = directionToMove * moveForce;// * 0.3f;
-//		Debug.DrawRay (transform.position, directionToMove, Color.blue);
-//Debug.DrawRay(transform.position,closestGameObject.transform.position, Color.red);
-//		Debug.DrawLine(transform.position, furthestGameObject.transform.position, Color.grey);
+		Debug.DrawRay (transform.position, directionToMove, Color.blue);
+		Debug.DrawRay(transform.position,closestGameObject.transform.position, Color.red);
+		Debug.DrawLine(transform.position, furthestGameObject.transform.position, Color.grey);
 	}
 
 }

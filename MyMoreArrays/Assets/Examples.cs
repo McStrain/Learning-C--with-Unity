@@ -9,13 +9,13 @@ public class Examples : MonoBehaviour {
 
 	void Update()
 	{
-		GameObject go = GameObject.Find("Cube");
+/*		GameObject go = GameObject.Find("Cube");
 		Vector3 CubePosition = go.transform.position;
 		Vector3 Up = new Vector3(0, 10, 0);
 		Debug.DrawRay (CubePosition, Up);
-
-
-
+*/
+		GameObject[] gos = GameObject.FindGameObjectsWithTag("Monster");
+		print (gos.Length);
 	}
 	
 

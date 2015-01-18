@@ -11,10 +11,8 @@ public class HumanState : ZombieState {
 			ZombieState z = go.GetComponent<ZombieState>();
 			if(z == null || z == this)
 			{
-				print ("Entered the null loop.  Continue is next statement.");
 				continue;
 			}
-			print ("This is right after the continue/if loop");
 			Vector3 v = go.transform.position - transform.position;
 			float distanceToGo = v.magnitude;
 			if (distanceToGo < closestDistance)
@@ -25,7 +23,7 @@ public class HumanState : ZombieState {
 					closestGameObject = go;
 				}
 			}
-			if (distanceToGo > furthestDistance)
+			if (distanceToGo > furthestDistance && distanceToGo < 10)
 			{
 				if (z is HumanState)
 				{

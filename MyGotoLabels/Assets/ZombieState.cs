@@ -14,6 +14,8 @@ public class ZombieState : MonoBehaviour {
 	public float furthestDistance;
 	public GameObject closestGameObject;
 	public GameObject furthestGameObject;
+	public float myStateTimer;
+	public float moveForce;
 	// Use this for initialization
 	void Start () {
 		stateTimer = 0.1f;
@@ -37,7 +39,7 @@ public class ZombieState : MonoBehaviour {
 			if(stateTimer < 0.0f)
 		{	
 			MyState = ZState.wandering;
-			stateTimer = 3.0f;
+			stateTimer = myStateTimer;
 			closestDistance = Mathf.Infinity;
 			furthestDistance = 0f;
 			LookAround ();
@@ -49,7 +51,7 @@ public class ZombieState : MonoBehaviour {
 		if(stateTimer < 0.0f)
 		{
 			MyState = ZState.idleing;
-			stateTimer = 3.0f;
+			stateTimer = myStateTimer;
 		}
 		return;
 
@@ -63,10 +65,8 @@ public class ZombieState : MonoBehaviour {
 			ZombieState z = go.GetComponent<ZombieState>();
 			if(z == null || z == this)
 			{
-				print ("Entered the null loop.  Continue is next statement.");
 				continue;
 			}
-			print ("This is right after the continue/if loop");
 			Vector3 v = go.transform.position - transform.position;
 			float distanceToGo = v.magnitude;
 			if (distanceToGo < closestDistance)
@@ -89,10 +89,10 @@ public class ZombieState : MonoBehaviour {
 		Vector3 directionToMove = MoveAway - MoveTo;
 		transform.forward = directionToMove;
 //		gameObject.rigidbody.velocity = directionToMove * Random.Range (10, 30) * 0.1f;
-		gameObject.rigidbody.velocity = directionToMove * 0.3f;
-		Debug.DrawRay (transform.position, directionToMove, Color.blue);
-		Debug.DrawRay(transform.position,closestGameObject.transform.position, Color.red);
-		Debug.DrawLine(transform.position, furthestGameObject.transform.position, Color.grey);
+		gameObject.rigidbody.velocity = directionToMove * moveForce;// * 0.3f;
+//		Debug.DrawRay (transform.position, directionToMove, Color.blue);
+//Debug.DrawRay(transform.position,closestGameObject.transform.position, Color.red);
+//		Debug.DrawLine(transform.position, furthestGameObject.transform.position, Color.grey);
 	}
 
 }

@@ -15,7 +15,32 @@ public class Examples : MonoBehaviour {
 		Debug.DrawRay (CubePosition, Up);
 */
 		GameObject[] gos = GameObject.FindGameObjectsWithTag("Monster");
-		print (gos.Length);
+		ArrayList distances = new ArrayList();
+		foreach (GameObject g in gos) 
+		{
+			Vector3 vec = g.transform.position - transform.position;
+			float distance = vec.magnitude;
+			//print (distance);
+			distances.Add (distance);
+		}
+		//print (distances.Count);
+
+		float closestValue = (float)distances [0];
+		GameObject closestObject = gos[0];
+		for (int i = 0; i < gos.Length; i++)
+		{
+			float d = (float)distances [i];
+			if (d < closestValue)
+			{
+				closestObject = gos[i];
+				closestValue = (float)distances[i];
+				print (closestValue);
+			}
+		}
+
+		Vector3 up = new Vector3(0,1,0);
+		Vector3 start = closestObject.transform.position;
+		Debug.DrawRay(start,up);
 	}
 	
 

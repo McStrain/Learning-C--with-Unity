@@ -19,9 +19,36 @@ public class OutParameter : MonoBehaviour {
 
 	
 	}
+
+	void sortObjects(GameObject[] objects, out GameObject[] sortedObjects)
+	{
+		for (int i = 0; i < objects.Length-1; i++)
+		{
+			Vector3 PositionA = objects[i].transform.position;
+			Vector3 PositionB = objects[i+1].transform.position;
+			Vector3 VectorToA = PositionA - transform.position;
+			Vector3 VectorToB = PositionB - transform.position;
+			float DistanceToA = VectorToA.magnitude;
+			float DistanceToB = VectorToB.magnitude;
+			if (DistanceToA > DistanceToB)
+			{
+				GameObject temp = objects[i];
+				objects[i] = objects[i+1];
+				objects[i + 1] = temp;
+			}
+		}
+		sortedObjects = objects;
+	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update () 
+	{
+		sortObjects (GameObjectArray, out GameObjectArray);
+		for(int i =0; i < GameObjectArray.Length; i++)
+		{
+			Vector3 PositionA = GameObjectArray[i].transform.position;
+			Debug.DrawRay (PositionA, new Vector3(0, i * 0.1f, 0), Color.red);
+			     
+		}
 	}
 }

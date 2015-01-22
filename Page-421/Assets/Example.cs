@@ -1,16 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using MyOwnIntType = System.Int16;
 
 public class Example : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () 
 	{
-		int a = GameObject.CreatePrimitive(PrimitiveType.Capsule).GetInstanceID();
-		int b = a;
-		print (a);
-		print (b);
-		print (a == b);
+		MyOwnIntType c =1;
+		print (c.GetType());
 	}
 	
 	// Update is called once per frame

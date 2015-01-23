@@ -6,12 +6,27 @@ public class MyExample : MonoBehaviour {
 	class Zombie
 	{
 		public int damage = 10;
-		public static Zombie operator + (Zombie a, Zombie b)
+		public static bool operator < (Zombie a, Zombie b)
 		{
-			Zombie z = new Zombie();
-			int powerUp = a.damage + b.damage;
-			z.damage = powerUp;
-			return z;
+			if (a.damage < b.damage)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		public static bool operator > (Zombie a, Zombie b)
+		{
+			if (a.damage > b.damage)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
 	}
 
@@ -26,12 +41,12 @@ public class MyExample : MonoBehaviour {
 			ammunition = size * 2;
 			weight = bandages * 0.2f + ammunition * 0.7f;
 		}
-		public static Supplies operator + (Supplies a, Supplies b)
+		public static Supplies operator * (Supplies a, int b)
 		{
 			Supplies s = new Supplies(0);
-			int sBandages = a.bandages + b.bandages;
-			int sAmmunition = a.ammunition + b.ammunition;
-			float sWeight = a.weight + b.weight;
+			int sBandages = a.bandages * b;
+			int sAmmunition = a.ammunition * b;
+			float sWeight = a.weight * b;
 			s.bandages = sBandages;
 			s.ammunition = sAmmunition;
 			s.weight = sWeight;
@@ -45,17 +60,12 @@ public class MyExample : MonoBehaviour {
 	{
 		Zombie a = new Zombie();
 		Zombie b = new Zombie();
-		print (a.damage);
-		print (b.damage);
-		Zombie c = a + b;
-		print (c.damage);
+		a.damage = 9;
+		if (a < b);
+		{
+			print ("a has less damage!");
+		}
 
-		Supplies supplyA = new Supplies(3);
-		Supplies supplyB = new Supplies(9);
-		Supplies combinedAB = supplyA + supplyB;
-		print (combinedAB.weight);
-		Supplies abc = supplyA + supplyB + combinedAB;
-		print (abc.weight);
 	}
 	
 	// Update is called once per frame

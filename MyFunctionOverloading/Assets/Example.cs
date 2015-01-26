@@ -53,6 +53,21 @@ public class Example : MonoBehaviour {
 				Debug.DrawLine(start + position, end + position, color);
 			}
 		}
+		public static void drawWord(string word, float scale, Vector3 position, Color color)
+		{
+			// convert to uppercase first
+			string uLetters = word.ToUpper ();
+			char[] letters = uLetters.ToCharArray ();
+			if (letters.Length > 0)
+			{
+				for(int i = 0; i < letters.Length; i++)
+				{
+					float offset = (i * scale);
+					Vector3 offsetPosition = new Vector3(offset + position.x, position.y, position.z);
+					drawWord (letters[i], scale, offsetPosition, color);
+				}
+			}
+		}
 	}
 
 
@@ -131,7 +146,9 @@ public class Example : MonoBehaviour {
 
 
 	// Update is called once per frame
-	void Update () {
-	
+	void Update () 
+	{
+		Vector3 position = Vector3.zero;
+		drawWord("words are being drawn", 2f, position, Color.black);
 	}
 }

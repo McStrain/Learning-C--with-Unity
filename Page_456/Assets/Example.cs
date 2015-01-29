@@ -4,14 +4,15 @@ using System.Collections;
 public class Example : MonoBehaviour {
 	class GetSet
 	{
-		public int myInt {get; set;}
+		private int myInt;
+		public int MyInt {get{return myInt;} set{myInt = value;}}
 	}
 	
 	void Start()
 	{
 		GetSet gs = new GetSet();
-		gs.myInt = 10;
-		print (gs.myInt);
+		gs.MyInt = 10;
+		print (gs.MyInt);
 	}
 
 	// Update is called once per frame

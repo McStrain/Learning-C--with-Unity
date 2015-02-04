@@ -5,6 +5,11 @@ public class MyTreadmillManager : MonoBehaviour {
 	class Obstacle
 	{
 		GameObject obstacle;
+		//constructor
+		public Obstacle()
+		{
+			obstacle = GameObject.CreatePrimitive (PrimitiveType.Cube);
+		}
 	}
 	private Obstacle[] obstacles;
 	public int ObstacleCount = 10;
